@@ -1,1 +1,1 @@
-# django_deployment_exericise
+# django_deployment_exercise
