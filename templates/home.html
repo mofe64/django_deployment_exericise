@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div>
+       {% for question in  questions %}
+           <h1>{{ question.question_text }}</h1>
+           <div class="user-choice">
+            {% for choice in question.choice_set.all %}
+                <div class="choice">
+                    <label >{{ choice.choice_text }}</label>
+                    <input type="radio" name="option" value="{{ choice.choice_text }}">
+                </div>
+                {% endfor %}
+           </div>
+           <button class="btn">
+           <a href="">Submit choice</a>
+           </button>
+        {% endfor %}
+    </div>
+</body>
+</html>
